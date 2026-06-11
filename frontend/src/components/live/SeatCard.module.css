@@ -1,0 +1,102 @@
+/* SeatCard.module.css */
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  min-width: 140px;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  z-index: 1;
+}
+
+.statusBadge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.occupied {
+  background-color: rgba(254, 226, 226, 0.7);
+  backdrop-filter: blur(4px);
+  color: #991b1b;
+  border: 1px solid rgba(252, 165, 165, 0.5);
+}
+
+.vacant {
+  background-color: rgba(209, 250, 229, 0.7);
+  backdrop-filter: blur(4px);
+  color: #065f46;
+  border: 1px solid rgba(110, 231, 183, 0.5);
+}
+
+.unknown {
+  background-color: rgba(241, 245, 249, 0.7);
+  backdrop-filter: blur(4px);
+  color: #475569;
+  border: 1px solid rgba(203, 213, 225, 0.5);
+}
+
+/* Status indicator dot */
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.indicator.occupied { 
+  background-color: #ef4444;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+}
+.indicator.vacant { 
+  background-color: #10b981; 
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+}
+.indicator.unknown { 
+  background-color: #94a3b8; 
+}
+
+.timeInfo {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 4px;
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-weight: 500;
+}

@@ -1,0 +1,37 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a;
+  height: 48px;
+  padding: 0 20px;
+}
+
+.brand {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease-in-out;
+  padding: 12px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.link:hover {
+  color: #f8fafc;
+}
+
+.active {
+  color: #f8fafc;
+  border-bottom: 2px solid #3b82f6;
+}
