@@ -1,4 +1,5 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/recorded';
+const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000';
+const API_BASE_URL = `${baseUrl}/recorded`;
 const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';
 
 export async function analyzeVideo(file) {

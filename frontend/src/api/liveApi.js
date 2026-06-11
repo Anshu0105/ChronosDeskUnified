@@ -1,6 +1,13 @@
 // Base API endpoint references
-export const API_BASE_URL = "http://127.0.0.1:8000/live";
-export const WS_BASE_URL = "ws://127.0.0.1:8000/live";
+const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+export const API_BASE_URL = `${baseUrl}/live`;
+
+const getWsUrl = (url) => {
+  if (url.startsWith("https://")) return url.replace("https://", "wss://");
+  if (url.startsWith("http://")) return url.replace("http://", "ws://");
+  return "ws://127.0.0.1:8000";
+};
+export const WS_BASE_URL = `${getWsUrl(baseUrl)}/live`;
 
 /**
  * Fetch a flat snapshot of all active seats from the server memory.
