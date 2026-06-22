@@ -88,7 +88,11 @@ class StreamReader:
 
                 if self.cap is None or not self.cap.isOpened():
                     if not self.connect():
-                        yield self._handle_disconnect()
+                        err_payload = self._handle_disconnect()
+                        yield err_payload
+                        if self.consecutive_failures > self.max_failures:
+                            logger.info("Breaking read loop because max failures reached.")
+                            break
                         continue
 
                 try:
